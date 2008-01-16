@@ -15,6 +15,7 @@ sub NULL             { is_nullable => 1 }
 # misnamed.
 sub INTEGER_PRIMARY_KEY() { INTEGER, AUTO_INCREMENT, NOT_NULL }
 
+1;
 __END__
 
 =head1 NAME
