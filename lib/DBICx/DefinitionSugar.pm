@@ -4,13 +4,14 @@ use warnings;
 
 use base 'Exporter';
 our @EXPORT = qw/AUTO_INCREMENT INTEGER VARCHAR NOT_NULL NULL 
-                 INTEGER_PRIMARY_KEY/;
+                 INTEGER_PRIMARY_KEY DATETIME/;
 
 sub AUTO_INCREMENT() { is_auto_increment => 1 }
 sub INTEGER()        { data_type => 'INTEGER' }
 sub VARCHAR(;$)      { my$a=$_[0]; data_type => $a ? 'VARCHAR' : "VARCHAR($a)" }
 sub NOT_NULL()       { is_nullable => 0 }
 sub NULL             { is_nullable => 1 }
+sub DATETIME         { data_type => 'DATETIME' }
 
 # misnamed.
 sub INTEGER_PRIMARY_KEY() { INTEGER, AUTO_INCREMENT, NOT_NULL }
